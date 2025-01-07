@@ -1,22 +1,8 @@
-ARG DISTRO=debian:bookworm-slim
-FROM $DISTRO AS minimal
+ARG BASE=debian:bookworm-slim
+FROM $BASE AS minimal
 
 ARG PG_VERSION
 ARG PG_MAJOR=${PG_VERSION%%.*}
-ARG BUILDTIME
-ARG REVISION
-
-LABEL org.opencontainers.image.created="$BUILDTIME"
-LABEL org.opencontainers.image.url="https://github.com/cloudnative-pg/postgres-containers"
-LABEL org.opencontainers.image.source="https://github.com/cloudnative-pg/postgres-containers"
-LABEL org.opencontainers.image.version="$PG_VERSION"
-LABEL org.opencontainers.image.revision="$REVISION"
-LABEL org.opencontainers.image.vendor="The CloudNativePG Contributors"
-LABEL org.opencontainers.image.title="CloudNativePG PostgreSQL $PG_VERSION minimal"
-LABEL org.opencontainers.image.description="A minimal PostgreSQL $PG_VERSION container image"
-LABEL org.opencontainers.image.documentation="https://github.com/cloudnative-pg/postgres-containers"
-LABEL org.opencontainers.image.authors="The CloudNativePG Contributors"
-LABEL org.opencontainers.image.licenses="Apache-2.0"
 
 ENV PATH=$PATH:/usr/lib/postgresql/$PG_MAJOR/bin
 
