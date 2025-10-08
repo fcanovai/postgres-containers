@@ -20,7 +20,7 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: 3.9
+          python-version: 3.14
 
       - name: Run update script
         uses: nick-fields/retry@v3
@@ -36,7 +36,7 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: 3.11
+          python-version: 3.14
 
       - name: Run update script
         uses: nick-fields/retry@v3
