@@ -172,7 +172,7 @@ jobs:
         }' > ${{ matrix.version }}-${{ matrix.distro }}.yaml
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: ${{ matrix.version }}-${{ matrix.distro }}-clusterimagecatalog
         path: ${{ matrix.version }}-${{ matrix.distro }}.yaml
@@ -188,7 +188,7 @@ jobs:
           token: ${{ secrets.REPO_GHA_PAT }}
 
       - name: Download artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           pattern: '*-clusterimagecatalog'
           path: clusterimagecatalog
