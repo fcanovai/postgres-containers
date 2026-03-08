@@ -95,7 +95,7 @@ jobs:
         fi
 
     - name: Build and load
-      uses: docker/build-push-action@v6
+      uses: docker/build-push-action@v7
       if: ${{ env.MISSING_TAG == 'true' }}
       with:
         context: ${{ matrix.dir }}
@@ -133,7 +133,7 @@ jobs:
 
     - name: Build and push
       id: build
-      uses: docker/build-push-action@v6
+      uses: docker/build-push-action@v7
       if: ${{ env.MISSING_TAG == 'true' }}
       with:
         context: ${{ matrix.dir }}
