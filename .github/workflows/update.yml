@@ -18,7 +18,7 @@ jobs:
         with:
           token: ${{ secrets.REPO_GHA_PAT }}
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: 3.9
 
@@ -34,7 +34,7 @@ jobs:
             echo "Updating Debian bullseye images"
             ./Debian/update.sh -d bullseye
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: 3.11
 
